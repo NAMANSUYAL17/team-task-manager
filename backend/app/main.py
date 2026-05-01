@@ -11,7 +11,10 @@ app = FastAPI(title="Team Task Manager", version="1.0.0")
 # CORS allows your React frontend (localhost:5173) to call this backend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],        # in production, set this to your frontend URL
+    allow_origins=[
+        "http://localhost:5173",
+        "https://69f527f8634f87868ea780e2--beautiful-dieffenbachia-c12791.netlify.app/"
+    ],        # in production, set this to your frontend URL
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
