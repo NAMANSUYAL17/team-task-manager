@@ -13,7 +13,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",
-        "https://69f527f8634f87868ea780e2--beautiful-dieffenbachia-c12791.netlify.app/"
+        "https://69f527f8634f87868ea780e2--beautiful-dieffenbachia-c12791.netlify.app"
     ],        # in production, set this to your frontend URL
     allow_credentials=True,
     allow_methods=["*"],
