@@ -7,13 +7,13 @@ Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="Team Task Manager", version="1.0.0")
 
-# Allow all origins temporarily to fix CORS - works for both local and production
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
-    allow_credentials=False,   # must be False when allow_origins=["*"]
-    allow_methods=["*"],
+    allow_credentials=False,
+    allow_methods=["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     allow_headers=["*"],
+    expose_headers=["*"],
 )
 
 app.include_router(auth.router)
@@ -23,4 +23,4 @@ app.include_router(dashboard.router)
 
 @app.get("/")
 def health_check():
-    return {"status": "ok", "message": "Team Task Manager API running"}
+    return {"status": "ok"}
